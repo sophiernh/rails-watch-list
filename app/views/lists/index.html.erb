@@ -1,9 +1,14 @@
 <h2>Current movie lists</h1>
 
+<%= cl_image_tag("bh4rsf1qjotqgrt9rgki",
+      width: 400, height: 300, crop: :fill) %>
+
 <ul>
   <% @lists.each do |list|  %>
     <li><%= link_to list.name, list_path(list.id) %></li>
   <% end %>
 </ul>
+
+<%= render "form", list: @list %>
 
 <%= link_to "Create a new list", new_list_path %>
